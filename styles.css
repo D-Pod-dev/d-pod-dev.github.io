@@ -4,6 +4,63 @@
     box-sizing: border-box;
 }
 
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.9rem;
+}
+
+.platform-card {
+    padding: 1rem 1.1rem;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    background: #161b22;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-2px);
+    border-color: #58a6ff;
+}
+
+.platform-card h3 {
+    margin-bottom: 0.4rem;
+}
+
+.platform-card p {
+    color: #8b949e;
+    margin-bottom: 0.65rem;
+    font-size: 0.95rem;
+}
+
+.platform-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.platform-links .button-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    min-width: auto;
+}
+
+.read-more-btn {
+    display: inline-block;
+    color: #58a6ff;
+    font-size: 0.88rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    border-bottom-color: #58a6ff;
+    text-decoration: none;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -128,6 +185,17 @@ p {
     border-color: #58a6ff;
     background: #1f2937;
     text-decoration: none;
+}
+
+.button-link.is-disabled,
+.button-link.is-disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: auto;
+    transform: none;
+    border-color: #30363d;
+    background: #161b22;
+    color: #8b949e;
 }
 
 .back-link {
@@ -340,6 +408,18 @@ footer {
 
 footer a {
     margin: 0 0.5rem;
+}
+
+@media (max-width: 830px) {
+    .platforms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .platforms-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
